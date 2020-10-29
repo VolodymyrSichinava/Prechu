@@ -1,0 +1,31 @@
+@font-face {
+	font-family: 'Segoe WP';
+	font-style: normal;
+	font-weight: normal;
+	src: local('Segoe WP'), url('../fonts/SegoeWP.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'Segoe WP N';
+	font-style: normal;
+	font-weight: normal;
+	src: local('Segoe WP N'), url('../fonts/SegoeWPN.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'source_sans_proregular';
+  src: url('../fonts/source_sans_pro_regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+	font-family: 'Segoe UI';
+	src: url('../fonts/SegoeUI-Light.eot');
+	src: local('Segoe UI Light'), local('SegoeUI-Light'),
+		url('../fonts/SegoeUI-Light.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/SegoeUI-Light.woff') format('woff'),
+		url('../fonts/SegoeUI-Light.ttf') format('truetype');
+	font-weight: 300;
+	font-style: normal;
+}

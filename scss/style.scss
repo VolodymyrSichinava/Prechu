@@ -1,0 +1,699 @@
+@import "./node_modules/normalize.css/normalize";
+@import "./node_modules/reset.css/reset";
+@import '_include-media';
+
+$link-color: #5094f2;
+$main-text-colour: #909090;
+
+*{box-sizing: border-box;}
+
+body{
+	font: 15px/15px 'Segoe WP N';
+	min-width: 973px;
+	color: $main-text-colour;
+	@include media('<1064px'){
+		min-width: 100%;
+	}
+}
+
+a{
+	color: $link-color;
+	text-decoration: none;
+	&:hover{
+		text-decoration: underline;
+	}
+}
+
+/* HEADER */
+
+header.header{
+	display: flex;
+	justify-content: center;
+	height: 89px;
+	width: 100%;
+}
+
+.logo-wrapper{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 973px;
+	@include media('<1064px'){
+		width: 100%;
+		padding-left: 36px;
+		padding-right: 36px;
+	}
+	@include media('<768px'){
+		padding-left: 30px;
+		padding-right: 37px;
+	}
+	.logo{
+		display: flex;
+		align-items: center;
+		.logo-img{
+			width: 44px;
+			height: 44px;
+			background-color: #5094f2;
+			border-radius: 50%;
+			position: relative;
+			margin-top: 2px;
+			@include media('<768px'){
+				width: 52px;
+				height: 52px;
+				margin-top: 6px;
+			}
+			&:before{
+				content: '“';
+				top: 29px;
+				left: 9px;
+				font-size: 64px;
+				font-family: 'source_sans_proregular';
+				color: #ffffff;
+				position: absolute;
+				@include media('<768px'){
+					font-size: 75px;
+					top: 37px;
+					left: 10px;
+				}
+			}
+		}
+		.logo-name{
+			font-family: 'Segoe UI';
+			color: #000000;
+			font-size: 42px;
+			margin-left: 13px;
+			margin-top: -1px;
+			letter-spacing: 0.4px;
+			@include media('<768px'){
+				font-size: 49px;
+				margin-top: -1px;
+				margin-left: 15px;
+				letter-spacing: 0.45px;
+			}
+		}
+	}
+	.menu{
+		display: flex;
+		width: 410px;
+		justify-content: space-between;
+		margin-top: 52px;
+		margin-right: 12px;
+		@include media('<768px'){
+			display: none;
+		}
+		a{
+			font-family: 'Segoe WP N';
+			color: #6c6c6c;
+			font-size: 20px;
+			padding: 0 6px 19px 3px;
+			border-bottom: 3px solid transparent;
+			transition: all 0.5s ease 0s;
+			&:hover,
+			&.active{
+				text-decoration: none;
+				border-bottom: 3px solid #5094f2;
+			}
+		}
+	}
+	.trigger{
+		@include media('<768px'){
+			display: inline-block;
+			padding: 6px 11px 8px 10px;
+			cursor: pointer;
+			background: #5094f2;
+			border-radius: 2px;
+			margin-right: -11px;
+			margin-top: 8px;
+			z-index: 11;
+		}
+		i{
+			@include media('<768px'){
+				display: block;
+				width: 37px;
+				height: 6px;
+				margin: 3px auto;
+				background: #ffffff;
+			}
+		}
+	}
+	.show{
+		@include media('<768px'){
+			background-color: #b9d6ff;
+			width: 100%;
+			position: absolute;
+			display: block;
+			left: 0;
+			top: 37px;
+			z-index: 10;
+			text-align: center;
+		}
+		a{
+			display: block;
+			float: none;
+			padding: 15px 0 15px 0;
+			font-size: 27px;
+		}
+	}
+}
+
+/* / HEADER */
+
+/* MAIN */
+
+main{
+	@include media('<1064px'){
+		width: 100%;
+	}
+	div.galery{
+		background: url(../images/galery_fon.png);
+		max-height: 490px;	
+		position: relative;
+		margin-bottom: 57px;
+		background-size: cover;
+		@include media('<1064px'){
+			width: 100%;
+		}
+		@include media('<768px'){
+			margin-bottom: 39px;
+		}
+		&:after{
+			content: '';
+			background: url(../images/border_bottom_galery.png);
+			width: 100%;
+			height: 16px;
+			position: absolute;
+			bottom: 0;
+			@include media('<768px'){
+				display: none;
+			}
+		}
+		.gallery-wrapper{
+			width: 973px;
+			margin: auto;
+			@include media('<1120px'){
+				width: 100%;
+				padding-left: 60px;
+			}
+			@include media('<768px'){
+				padding-left: 36px;
+			}
+			.item{
+				display: flex;
+				align-items: center;
+				@include media('<1064px'){
+					width: 100%;
+					height: 100%;
+				}
+				.imgs{
+					max-height: 436px;
+					width: 345px;
+					margin: 37px 103px 17px 35px; 
+					@include media('<1064px'){
+						height: auto;
+					}
+					@include media('<768px'){
+						width: 247px;
+						margin: 22px 64px 1px 0;
+					}
+					@include media('<600px'){
+						margin: 35px 25px 25px 0;
+					}
+					img{
+						@include media('<1064px'){
+							width: 100%;
+							height: auto;
+						}
+					}
+				}	
+				.text{
+					width: 490px;
+					color: #ffffff;
+					letter-spacing: 0.2px;
+					margin-top: -28px;
+					padding-right: 40px;
+					@include media('<768px'){
+						margin-top: -65px;	
+						padding-right: 40px;
+					}
+					@include media('<600px'){
+						margin-top: -40px;
+					}
+					h1{
+						font-family: 'Segoe UI';
+						font-size: 42px;
+						line-height: 45px;
+						margin-bottom: 21px;
+						@include media('<768px'){
+							font-size: 31px;
+							margin-bottom: 9px;
+						}
+						@include media('<610px'){
+							line-height: 25px;
+							margin-top: 12px;
+							margin-bottom: 20px;
+						}
+						@include media('<600px'){
+							font-size: 25px;
+							line-height: 23px;
+							margin-bottom: 15px;
+							margin-top: 15px;
+						}	
+					}
+					p{
+						font-size: 26px;
+						margin-bottom: 30px;
+						letter-spacing: -0.5px;
+						@include media('<768px'){
+							font-size: 23px;
+							margin-bottom: 21px;
+							letter-spacing: -0.75px;
+						}
+						@include media('<600px'){
+							font-size: 20px;
+							margin-bottom: 10px;
+						}	
+					}
+					a{
+						background-color: #5094f2;
+						border-radius: 2px;
+						min-width: 175px;
+						color: #ffffff;
+						font-size: 22px;
+						padding: 3px 13px 8px 44px;
+						top: 25px;
+						left: 14px;
+						position: relative;
+						letter-spacing: -0.6px;
+						transition: all 0.3s ease 0s;
+						@include media('<768px'){
+							font-size: 31px;
+							top: 35px;
+							left: 2px;
+							border-radius: 0;
+							padding: 2px 13px 10px 58px;
+						}
+						@include media('<600px'){
+							top: 10px;
+							font-size: 20px;
+							padding-left: 45px;
+						}
+						&:before{
+							content: '';
+							background: url(../images/check_button.svg) no-repeat;
+							width: 23px;
+							height: 23px;
+							top: 9px;
+							left: 11px;
+							position: absolute;
+							@include media('<768px'){
+								background: url(../images/check_button_responsive.svg) no-repeat;
+								width: 33px;
+								height: 32px;
+								top: 10px;
+								left: 14px;
+							}
+							@include media('<600px'){
+								top: 7px;
+								background: url(../images/check_button.svg) no-repeat;
+								width: 23px;
+								height: 23px;
+							}
+						}
+						&:hover{
+							text-decoration: none;
+							box-shadow: 0 0 2px 2px #292828;
+							background-color: #1469df; 
+						}
+					}
+				}
+			}
+		}
+		.owl-dots{
+		display: none;
+		}
+
+		.owl-nav{
+			margin: 0;
+			position: absolute;
+			top: calc(50% - 19px);
+			left: -64px;
+			width: 1098px;
+			display: flex;
+			justify-content: space-between;
+			@include media('<1120px'){
+				width: 100%;
+				left: 0;
+			}
+		}
+		.owl-prev{
+			span{
+				display: none;
+			}
+		}
+		.owl-carousel .owl-nav button.owl-prev{
+			background: url('../images/sprite.png') no-repeat -19px -12px;
+			width: 25px;
+			height: 63px;
+			margin-left: 15px;
+			outline: none;
+			@include media('<768px'){
+				display: none;
+			}
+		}
+		.owl-next{
+			span{
+				display: none;
+			}
+		}
+		.owl-carousel .owl-nav button.owl-next{
+			background: url('../images/sprite.png') no-repeat -103px -18px;
+			width: 25px;
+			height: 63px;
+			margin-right: 15px;
+			outline: none;
+			@include media('<1120px'){
+				margin-right: 20px;
+			}
+			@include media('<768px'){
+				display: none;
+			}
+		}
+	}
+}
+
+/* / MAIN */
+
+/* ASIDE */
+
+aside{
+	margin:0 43px;
+	@include media('<768px'){
+		margin: 0 0 41px 0;
+	}
+	.aside-content{
+		display: flex;
+		justify-content: space-between;
+		width: 973px;
+		margin: auto;
+		@include media('<1060px'){
+			width: 100%;
+		}
+		@include media('<768px'){
+			flex-direction: column;
+		}
+		div{
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			width: 250px;
+			margin-bottom: 42px;
+			@include media('<768px'){
+				margin-bottom: 0;
+			}
+		}
+		.order{
+			text-align: center;
+			margin-left: 4px;
+			@include media('<768px'){
+				display: flex;
+				width: 100%;
+				flex-direction: row;
+				justify-content: flex-start;
+				margin-bottom: 32px;
+				margin-left: 0;
+				padding-left: 44px;
+				padding-bottom: 18px;
+				border-bottom: 1px solid #cccccc;
+			}
+			.aside-img{
+				width: 186px;
+				height: 186px;
+				border-radius: 50%;/*margin auto*/
+				position: relative;
+				background-color: #5094f2;
+				padding-left: 5px;
+				margin-bottom: 17px;
+				@include media('<768px'){
+					width: 136px;
+					height: 136px;
+					border-radius: 50%;
+					flex-shrink: 0;
+					margin-bottom: 0px;
+				}
+				img{
+					@include media('<768px'){
+						width: 56px;
+						height: 79px;
+					}
+				}
+			}
+		}
+		.processing{
+			margin-left: 20px;
+			text-align: center;
+			text-align: center;
+			@include media('<768px'){
+				display: flex;
+				width: 100%;
+				flex-direction: row;
+				justify-content: flex-start;
+				margin-bottom: 21px;
+				margin-left: 0;
+				padding-left: 44px;
+				padding-bottom: 19px;
+				border-bottom: 1px solid #cccccc;
+			}
+			.aside-img{
+				width: 186px;
+				height: 186px;
+				border-radius: 50%;/*margin auto*/
+				position: relative;
+				margin-bottom: 17px;
+				background-color: #d94748;
+				padding-bottom: 1px;
+				@include media('<768px'){
+					width: 136px;
+					height: 136px;
+					border-radius: 50%;
+					flex-shrink: 0;
+					margin-bottom: 0px;
+				}
+				img{
+					@include media('<768px'){
+						width: 71px;
+						height: 61px;
+					}
+				}
+			}
+		}
+		.buy{
+			margin-left: 20px;
+			margin-right: 5px;
+			text-align: center;
+			@include media('<768px'){
+				margin-left: 0;
+				padding-left: 37px;
+				padding-bottom: 22px;
+				border-bottom: 1px solid #cccccc;
+				display: flex;
+				width: 100%;
+				flex-direction: row;
+				justify-content: flex-start;
+			}
+			.aside-img{
+				background-color: #ebbb11;
+				padding-left: 4px;
+				width: 186px;
+				height: 186px;
+				border-radius: 50%;/*margin auto*/
+				position: relative;
+				margin-bottom: 17px;
+				@include media('<768px'){
+					width: 146px;
+					height: 146px;
+					border-radius: 50%;
+					flex-shrink: 0;
+					margin-bottom: 0px;
+				}
+				img{
+					@include media('<768px'){
+						width: 77px;
+						height: 70px;
+					}
+				}
+			}
+		}
+		.order,
+		.processing,
+		.buy{
+			.aside-text{
+				width: 100%;
+				@include media('<768px'){
+					align-items: initial;
+					margin-left: 22px;
+					margin-right: 22px;
+				}
+				a{
+					font-family: 'Segoe WP N';
+					font-size: 20px;
+					color: $link-color;
+					margin: 0 0 2px -9px;
+					line-height: 35px;
+					display: inline-block;
+					@include media('<768px'){
+						margin: -4px 0 13px 1px;
+						text-align: left;
+						font-size: 34px;
+					}
+				}
+				p{
+					font-family: 'Segoe WP N';
+					font-size: 14px;
+					color: $main-text-colour;
+					margin: 0 0 0 -7px;
+					line-height: 17px;
+					@include media('<768px'){
+						margin: 0 0 0 5px;
+						text-align: left;
+						font-size: 19px;
+						line-height: 22px;
+					}
+				}
+			}
+		}
+	}
+}
+
+/* SECTION */
+
+section{
+	border-bottom: 1px solid #e5e5e5;
+	.section-content{
+		width: 973px;
+		margin: auto;
+		padding-bottom: 46px;
+		@include media('<1060px'){
+			width: 100%;
+			padding-left: 35px;
+			padding-right: 35px;
+		}
+		@include media('<768px'){
+			padding-bottom: 32px;
+		}
+		header{
+			width: 973px;
+			min-height: 40px;
+			margin-bottom: 15px;
+			@include media('<1060px'){
+				width: 100%;
+			}
+			@include media('<768px'){
+				margin-bottom: 18px;
+			}
+			h2{
+			font-family: 'Segoe WP N';
+			font-size: 42px;
+			color: #6f7173;
+			margin-left: 27px;
+			letter-spacing: 0.2px;
+			line-height: 45px;
+				@include media('<768px'){
+				text-align: center;
+				margin-right: 32px;
+				}
+			}
+		}
+		.section-main{
+			display: flex;
+			justify-content: space-between;
+			width: 973px;
+			@include media('<1060px'){
+				width: 100%;
+			}
+			@include media('<768px'){
+				flex-direction: column;
+			}
+			.section-img{
+				margin-top: 22px;
+				padding-left: 18px;
+				@include media('<768px'){
+					display: flex;
+					justify-content: center;
+					margin-right: 31px;
+					margin-top: 22px;
+					margin-bottom: 19px;
+				}
+				img{
+					width: 100%;
+					height: auto;
+					@include media('<768px'){
+						width: 215px;
+						height: 162px;
+					}
+				}
+			}
+			.section-text{
+				width: 469px;
+				margin-right: 32px;
+				@include media('<1060px'){
+					margin-left: 35px;
+				}
+				@include media('<768px'){
+					width: 100%;
+					padding-right: 40px;
+				}
+				h3{
+					font-family: 'Segoe WP N';
+					font-size: 26px;
+					color: #6f7173;
+					margin-bottom: 29px;
+					letter-spacing: 0.2px;
+					line-height: 25px;
+					@include media('<768px'){
+						font-size: 34px;
+						margin-left: 6px;
+						margin-bottom: 34px;
+					}
+					@include media('<600px'){
+						line-height: 30px;
+					}
+				}
+				p{
+					font-family: 'Segoe UI';
+					font-size: 15px;
+					color: $main-text-colour;
+					margin-bottom: 16px;
+					letter-spacing: 0.2px;
+					word-spacing: 0.3px;
+					line-height: 20px;
+					@include media('<768px'){
+						font-size: 17px;
+						margin-left: 7px;
+						margin-bottom: 16px;
+					}
+				}
+			}
+		}
+	}
+}
+/* / SECTION */
+
+/* / ASIDE */
+
+footer{
+	display: flex;
+	justify-content: center;
+	min-height: 93px;
+	padding-top: 31px;
+	@include media('<1060px'){
+		width: 100%;
+
+	}
+	span{
+		font-family: 'Segoe UI';
+		font-size: 15px;
+		color: $main-text-colour;
+		letter-spacing: 0.45px;
+	}
+}
